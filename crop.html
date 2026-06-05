@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Suggestion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="problems.html">Problems</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="contact.html">Contact</a>
+    <a href="weather.html">Weather</a>
+    <a href="crop.html">Crop Suggestion</a>
+</div>
+
+<h1>🌾 Crop Suggestion System</h1>
+
+<p>Enter temperature to get crop recommendation</p>
+
+<input type="number" id="temp" placeholder="Enter temperature (°C)">
+<br><br>
+
+<button onclick="suggestCrop()">Suggest Crop</button>
+
+<h2 id="result"></h2>
+
+<script>
+function suggestCrop() {
+    let temp = document.getElementById("temp").value;
+    let result = document.getElementById("result");
+
+    if (temp === "") {
+        result.innerHTML = "❌ Please enter temperature";
+        return;
+    }
+
+    if (temp < 15) {
+        result.innerHTML = "🌱 Suggestion: Wheat, Barley";
+    }
+    else if (temp >= 15 && temp <= 25) {
+        result.innerHTML = "🌱 Suggestion: Rice, Maize, Vegetables";
+    }
+    else {
+        result.innerHTML = "🌱 Suggestion: Cotton, Millets, Sugarcane";
+    }
+}
+</script>
+
+</body>
+</html>
